@@ -19,15 +19,73 @@ generateBtn.addEventListener("click", writePassword);
  var confirmNum;
  var confirmSymbol;
 
+ // empty list variable to store the choices form user
+
+
  // create a function generate password
 
  function generatePassword (){
    userLength = parseInt(prompt("How many Length of characters for password? Type num: "))
-   while (userLength < 8 && userLength > 128){
-     userLength = parseInt(prompt("The length should be between 8-128. Please choose again: "))
-     console.log(userLength);
-   }
+
+
+   //While loop for user input validation to check if its under the criteria of 8-128 char
+   
+   while (!userLength |userLength < 8 || userLength > 128){
+     alert ("This needs a value between 8-128 character & cannot be empty");
+     var userLength = parseInt(prompt("How many Length of characters for password? Type num:  "));
+    }
+    console.log(userLength);
+
+
+     //user confirmation on  types of criteria to include in the password
+     var confirmUpper = confirm ("Do you want UpperCase alphabets in your password?");
+     var confirmLower = confirm("Do you want LowerCase in your password?");
+     var confirmNum = confirm("Do you want Number in your password?");
+     var confirmSymbol = confirm("Do you want Symbol in your password?");
+
+    //User validation for selecting at least one criteria
+
+    while (confirmUpper === false && confirmLower === false && confirmNum=== false && confirmSymbol=== false) {
+        alert("You must at least select one character type");
+        var confirmUpper = confirm ("Do you want UpperCase alphabets in your password?");
+        var confirmLower = confirm("Do you want LowerCase in your password?");
+        var confirmNum = confirm("Do you want Number in your password?");
+        var confirmSymbol = confirm("Do you want Symbol in your password?");   
+    }
+    console.log(confirmUpper);
+    console.log(confirmLower);
+    console.log(confirmNum);
+    console.log(confirmSymbol);
+
+     //empty array to store user confirmation
+     var choices = [];
+    
+     //storing user input in choices array using if else statement
+
+     if (confirmUpper === true){
+       var choices = choices.concat(characters.upperCase);
+     }
+
+     if (confirmLower === true){
+       var choices = choices.concat(characters.lowerCase);
+     }
+
+     if (confirmNum === true){
+       var choices = choices.concat(characters.num);
+     }
+     if(confirmSymbol === true){
+       var choices= choices.concat(characters.symbol);
+     }
+
+    
+     console.log(choices);
+
+     
+   
+
+   
  }
+
 
 
 
