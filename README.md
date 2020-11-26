@@ -7,6 +7,8 @@ This week’s homework requires  to create an application that an employee can u
 The password can include special characters.[list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
 
 ## Installation
+https://github.com/AlishaPanday/Password-Generator 
+https://alishapanday.github.io/Password-Generator/
 
 
 ## User Story
